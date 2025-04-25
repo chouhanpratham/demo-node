@@ -15,9 +15,11 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh 'docker build -t $DOCKER_IMAGE .'
-                }
+                // Change to the node-app directory
+                    dir('node-app') {
+                        // Build Docker image from within the node-app folder
+                        sh 'docker build -t $DOCKER_IMAGE .'
+                    }
             }
         }
 

@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/chouhanpratham/demo-node.git' // ✅ Replace with your actual repo if different
+                git branch: 'main', url:'https://github.com/chouhanpratham/demo-node.git' // ✅ Replace with your actual repo if different
             }
         }
 
